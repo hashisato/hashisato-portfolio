@@ -26,6 +26,13 @@
     </nav>
   </header>
   <main>
+    <div id="about-text" style="text-align:center; margin: 2em 0 2.5em 0;">
+      <h2>自己紹介</h2>
+      <p>
+        hashisatoです。Web開発や個人開発を中心に活動しています。<br>
+        RustやTypeScriptが好きです。よろしくお願いします！
+      </p>
+    </div>
     <section id="github-link">
       <h2 id="github-title">GitHub</h2>
       <p id="github-desc">個人開発のリポジトリを公開しています</p>
@@ -98,9 +105,11 @@
     const githubLinkSection = document.getElementById('github-link');
     const xLinkSection = document.getElementById('x-link');
     const githubSection = document.getElementById('github-section');
+    const aboutText = document.getElementById('about-text');
 
     function showHome(e) {
       if (e) e.preventDefault();
+      aboutText.style.display = '';
       githubLinkSection.style.display = '';
       xLinkSection.style.display = '';
       githubSection.style.display = 'none';
@@ -111,6 +120,7 @@
     }
     function showGithub(e) {
       if (e) e.preventDefault();
+      aboutText.style.display = 'none';
       githubLinkSection.style.display = 'none';
       xLinkSection.style.display = 'none';
       githubSection.style.display = '';
