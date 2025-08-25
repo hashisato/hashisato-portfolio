@@ -252,6 +252,105 @@
       .contribution { padding: 1rem .2rem;}
       .section-title { font-size: 1.4rem; padding: 0 .2rem;}
     }
+
+    /* 背景アニメーション用CSSを整理・修正 */
+    @keyframes move-background {
+      from {
+        transform: translate3d(0px, 0px, 0px);
+      }
+      to {
+        transform: translate3d(1000px, 0px, 0px);
+      }
+    }
+    @-webkit-keyframes move-background {
+      from {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+      }
+      to {
+        -webkit-transform: translate3d(1000px, 0px, 0px);
+      }
+    }
+    @-moz-keyframes move-background {
+      from {
+        -moz-transform: translate3d(0px, 0px, 0px);
+      }
+      to {
+        -moz-transform: translate3d(1000px, 0px, 0px);
+      }
+    }
+    @-o-keyframes move-background {
+      from {
+        -o-transform: translate3d(0px, 0px, 0px);
+      }
+      to {
+        -o-transform: translate3d(1000px, 0px, 0px);
+      }
+    }
+
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .background-container img {
+      height: 70vh;
+      width: 70vh;
+      position: absolute;
+      z-index: 3;
+      right: 20px;
+      top: 20px;
+      pointer-events: none;
+    }
+
+    .stars {
+      background: black url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png") repeat;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      z-index: 0;
+    }
+
+    .twinkling {
+      width: 10000px;
+      height: 100%;
+      background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
+      background-size: 1000px 1000px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+      animation: move-background 70s linear infinite;
+      -webkit-animation: move-background 70s linear infinite;
+      -moz-animation: move-background 70s linear infinite;
+      -o-animation: move-background 70s linear infinite;
+    }
+
+    .clouds {
+      width: 10000px;
+      height: 100%;
+      background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png") repeat;
+      background-size: 1000px 1000px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 3;
+      animation: move-background 150s linear infinite;
+      -webkit-animation: move-background 150s linear infinite;
+      -moz-animation: move-background 150s linear infinite;
+      -o-animation: move-background 150s linear infinite;
+    }
   </style>
   <meta name="google-site-verification" content="l5jMueQRkk5FhkPXiOItyOmejl3wF6vC6cZcdRiX0-k" />
 </head>
